@@ -5,17 +5,19 @@
 * 자바 소켓 프로그래밍
 * 자바 GUI (Swing)
 
-
+  
 
 ### 구조
 
+  
 
 
 
 
 
+  
 
-
+  
 
 ### Preview
 
@@ -25,13 +27,17 @@
 
 <img src="./image/Server_2.png" alt="Server_2" width="350" />
 
-
+  
 
 > Client
 
 
 
 
+
+
+
+  
 
 ##  Install
 
@@ -45,7 +51,7 @@
 
 
 
-
+  
 
 ## Usage
 
