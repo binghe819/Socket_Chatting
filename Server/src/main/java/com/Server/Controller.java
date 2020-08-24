@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Collections;
 import java.util.Date;
@@ -38,7 +39,9 @@ public class Controller extends Thread{
             Date time = new Date();
             view.getLogText().append("- Time : "+format.format(time)+"\n");
             view.getLogText().append("- Port : "+this.port+"\n");
-
+            // 화면 전환
+            view.getAdminLoginPanel().setVisible(false);
+            view.getAdminPanel().setVisible(true);
             while(true){
                 // 새로운 유저 접속 (socket)
                 socket = serverSocket.accept(); // 블록

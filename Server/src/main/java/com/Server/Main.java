@@ -1,5 +1,6 @@
 package com.Server;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,6 +8,7 @@ import java.awt.event.ActionListener;
 public class Main {
 
     public static void main(String[] args) {
+
         // View 출력
         View view = new View();
         EventQueue.invokeLater(new Runnable() {
@@ -18,6 +20,7 @@ public class Main {
                 }
             }
         });
+
         // 서버의 공인 IP 받아와서 뷰에 출력
         try { view.getMyIPText().setText(Controller.getIp()); } catch (Exception e) { e.printStackTrace(); }
 
@@ -27,17 +30,13 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 // 포트 번호 받아오기
                 String port = view.getPortInputText().getText();
-                if(port == null) // 유효한 포트인지 확인
+                if(port.equals("")) // 유효한 포트인지 확인
                     return;
-                // 화면 전환
-                view.getAdminLoginPanel().setVisible(false);
-                view.getAdminPanel().setVisible(true);
                 // Controller 실행
                 Controller controller = new Controller(view, Integer.parseInt(port));
                 controller.start();
             }
         });
-
     }
 }
 
